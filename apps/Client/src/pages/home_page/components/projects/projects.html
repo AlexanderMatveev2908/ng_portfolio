@@ -5,5 +5,26 @@
     <div class="content__filters">
       <app-filter-app-type />
     </div>
+
+    <div class="content__items">
+      @for (item of filtered(); track item.id) {
+        <div class="items__item">
+          <div class="item__img">
+            <app-img-loading [src]="item.img" />
+          </div>
+
+          <div class="item__info">
+            <span class="info__title">{{ item.title }}</span>
+
+            <a [href]="item.repo">GitHub</a>
+            @if (item.down) {
+              <span class="text-center">Machine Down, Live not currently available</span>
+            } @else {
+              <a [href]="item.live">Live</a>
+            }
+          </div>
+        </div>
+      }
+    </div>
   </div>
 </div>

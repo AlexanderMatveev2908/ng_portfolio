@@ -1,7 +1,8 @@
 import { ProjectT } from '@/common/types/projects';
+import { v4 } from 'uuid';
 
 export class ProjectsUiFct {
-  public readonly data: ProjectT[] = [
+  public static readonly data: ProjectT[] = [
     {
       title: 'Invoices App',
       repo: 'https://github.com/AlexanderMatveev2908/InvoicesApp',
@@ -114,5 +115,9 @@ export class ProjectsUiFct {
       defName: 'calc',
       down: false,
     },
-  ];
+  ].map((el) => ({
+    ...el,
+    img: `/images/apps/${el.defName}.png`,
+    id: v4(),
+  })) as ProjectT[];
 }

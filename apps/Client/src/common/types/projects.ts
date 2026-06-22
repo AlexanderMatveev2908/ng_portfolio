@@ -7,4 +7,6 @@ export interface ProjectT {
   appType: AppTypeT;
   defName: string;
   down: boolean;
+  img: string;
+  id: string;
 }
