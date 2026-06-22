@@ -14,7 +14,7 @@ jobs:
         app:
           - name: ng-portfolio
             dir: ./apps/Client
-            token: GYM_SCHEDULES__CLIENT
+            token: NG_PORTFOLIO
 
     concurrency:
       group: deploy-${{ matrix.app.name }}
