@@ -1,0 +1,28 @@
+@use 'exports/mix.scss' as mix;
+
+.root {
+  @apply flex flex-col gap-[20px];
+
+  .root__slider {
+    @apply border-[3px] border-neutral-300 flex items-center gap-[25px] p-5 rounded-2xl overflow-hidden;
+
+    .slider__track {
+      @apply flex items-center gap-[25px];
+      animation: slide_left 15s linear infinite;
+
+      .slider__svg {
+        @include mix.of_size(50px);
+      }
+    }
+  }
+}
+
+@keyframes slide_left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 12.5px));
+  }
+}
