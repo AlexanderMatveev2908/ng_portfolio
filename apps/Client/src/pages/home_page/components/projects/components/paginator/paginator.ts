@@ -87,12 +87,12 @@ export class Paginator extends UseInjCtxHk implements OnInit {
 
   @HostListener('window:resize')
   public updateLimitBlockPages(): void {
-    const width = window.innerWidth;
-
     if (this.usePlatform.isServer) {
       this.limitBlockPages.set(1);
       return;
     }
+
+    const width = window.innerWidth;
 
     if (width >= Breakpoints.XXL) {
       this.limitBlockPages.set(5);

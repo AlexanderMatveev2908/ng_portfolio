@@ -49,16 +49,17 @@ export class Projects implements OnInit {
   );
 
   public updateLimit(): void {
-    const width = window.innerWidth;
-
     if (this.usePlatform.isServer) {
       this.limit.set(1);
-    } else {
-      if (width >= Breakpoints.XXL) this.limit.set(4);
-      else if (width >= Breakpoints.XL) this.limit.set(3);
-      else if (width >= Breakpoints.MD) this.limit.set(2);
-      else this.limit.set(1);
+      return;
     }
+
+    const width = window.innerWidth;
+
+    if (width >= Breakpoints.XXL) this.limit.set(4);
+    else if (width >= Breakpoints.XL) this.limit.set(3);
+    else if (width >= Breakpoints.MD) this.limit.set(2);
+    else this.limit.set(1);
   }
   ngOnInit(): void {
     this.updateLimit();

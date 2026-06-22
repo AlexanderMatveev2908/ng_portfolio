@@ -12,6 +12,14 @@ export class ProjectsUiFct {
       down: true,
     },
     {
+      title: 'Recipes App',
+      repo: 'https://github.com/AlexanderMatveev2908/RecipesApp',
+      live: 'https://recipes-app-client.fly.dev/',
+      appType: 'full-stack',
+      defName: 'recipes',
+      down: false,
+    },
+    {
       title: 'Product Feedbacks',
       repo: 'https://github.com/AlexanderMatveev2908/asp-product-feedback',
       live: 'https://asp-product-feedback-client.fly.dev/',
