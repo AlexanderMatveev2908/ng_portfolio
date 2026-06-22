@@ -7,7 +7,7 @@
     </div>
 
     <div class="content__items">
-      @for (item of filtered(); track item.id) {
+      @for (item of paginated(); track item.id) {
         <div class="items__item">
           <div class="item__img">
             <app-img-loading [src]="item.img" />
@@ -19,6 +19,8 @@
             <a [href]="item.repo">GitHub</a>
             @if (item.down) {
               <span class="text-center">Machine Down, Live not currently available</span>
+            } @else if (item.appType === 'backend') {
+              <span class="text-center">Live not currently available</span>
             } @else {
               <a [href]="item.live">Live</a>
             }
