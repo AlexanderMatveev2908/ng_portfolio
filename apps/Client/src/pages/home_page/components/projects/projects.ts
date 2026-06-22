@@ -5,6 +5,7 @@ import {
   HostListener,
   inject,
   OnInit,
+  Signal,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -43,6 +44,10 @@ export class Projects implements OnInit {
     return this.filtered().slice(start, end);
   });
 
+  public readonly totPages: Signal<number> = computed(() =>
+    Math.ceil(this.filtered().length / this.limit()),
+  );
+
   public updateLimit(): void {
     const width = window.innerWidth;
 
@@ -61,5 +66,9 @@ export class Projects implements OnInit {
   @HostListener('window:resize')
   public onResize() {
     this.updateLimit();
+
+    if (this.projectsSlice.page() >= this.totPages()) {
+      this.projectsSlice.setPage(0);
+    }
   }
 }

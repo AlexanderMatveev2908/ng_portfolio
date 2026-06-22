@@ -33,39 +33,36 @@ import { v4 } from 'uuid';
 })
 export class Paginator extends UseInjCtxHk implements OnInit {
   public readonly limit: InputSignal<number> = input.required();
-  public readonly filteredLength: InputSignal<number> = input.required();
+  public readonly totPages: InputSignal<number> = input.required();
 
   public readonly limitBlockPages: WritableSignal<number> = signal(1);
   public readonly currBlockPages: WritableSignal<number> = signal(0);
 
   public readonly projectsSlice: ProjectsSlice = inject(ProjectsSlice);
 
-  public handleClickPage(val: string) {
-    const asNum = +val - 1;
-
-    this.projectsSlice.setPage(asNum);
+  public handleClickPage(val: number) {
+    this.projectsSlice.setPage(val);
   }
-
-  public readonly totPages: Signal<number> = computed(() =>
-    Math.ceil(this.filteredLength() / this.limit()),
-  );
 
   public readonly SvgRight: SvgT = SvgStrokeChevRight;
   public readonly SvggLeft: SvgT = SvgStrokeChevLeft;
 
-  public readonly pagesToShow: Signal<{ val: string; id: string }[]> = computed(() => {
-    const start = this.currBlockPages() * this.limitBlockPages();
-    const end = Math.min(start + this.limitBlockPages(), this.totPages());
+  public readonly pagesToShow: Signal<{ val: number; label: string; id: string }[]> = computed(
+    () => {
+      const start = this.currBlockPages() * this.limitBlockPages();
+      const end = Math.min(start + this.limitBlockPages(), this.totPages());
 
-    return Array.from({ length: end - start }, (_, i) => {
-      const page = start + i;
+      return Array.from({ length: end - start }, (_, i) => {
+        const page = start + i;
 
-      return {
-        val: String(page + 1),
-        id: v4(),
-      };
-    });
-  });
+        return {
+          val: page,
+          label: String(page + 1),
+          id: v4(),
+        };
+      });
+    },
+  );
 
   public readonly totalBlocks = computed(() => Math.ceil(this.totPages() / this.limitBlockPages()));
 

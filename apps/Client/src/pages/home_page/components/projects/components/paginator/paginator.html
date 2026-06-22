@@ -7,9 +7,9 @@
       <button
         (click)="handleClickPage(item.val)"
         class="content__item"
-        [ngClass]="projectsSlice.page() === +item.val - 1 ? 'bg-neutral-300 text-neutral-950' : ''"
+        [ngClass]="projectsSlice.page() === item.val ? 'bg-neutral-300 text-neutral-950' : ''"
       >
-        {{ item.val }}
+        {{ item.label }}
       </button>
     }
   </div>
