@@ -12,13 +12,9 @@ jobs:
       fail-fast: false
       matrix:
         app:
-          - name: gym-schedules-client
+          - name: ng-portfolio
             dir: ./apps/Client
             token: GYM_SCHEDULES__CLIENT
-
-          - name: gym-schedules-server
-            dir: ./apps/Server
-            token: GYM_SCHEDULES__SERVER
 
     concurrency:
       group: deploy-${{ matrix.app.name }}
