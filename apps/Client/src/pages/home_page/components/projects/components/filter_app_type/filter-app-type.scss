@@ -9,7 +9,7 @@
   }
 
   .root__drop {
-    @apply absolute w-[200%] border-[3px] border-neutral-300 p-5 rounded-2xl top-[150%] flex flex-col gap-[15px] bg-neutral-950;
+    @apply absolute w-[200%] border-[3px] border-neutral-300 p-5 rounded-2xl top-[150%] flex flex-col gap-[15px] bg-neutral-950 z-50;
 
     .drop__item {
       @apply flex justify-start items-center gap-[15px];
