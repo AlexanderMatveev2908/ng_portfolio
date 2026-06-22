@@ -8,7 +8,7 @@
 
     .slider__track {
       @apply flex items-center gap-[25px];
-      animation: slide_left 15s linear infinite;
+      animation: slide_left 100s linear infinite;
 
       .slider__svg {
         @include mix.of_size(50px);
