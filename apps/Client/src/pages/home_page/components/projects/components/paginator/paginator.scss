@@ -1,7 +1,7 @@
 @use 'exports/mix.scss' as mix;
 
 .root {
-  @apply grid grid-cols-[50px_1fr_50px] mt-[50px] gap-[50px];
+  @apply grid grid-cols-[50px_1fr_50px] mt-[25px] gap-[50px];
 
   .btn__block {
     @include mix.app__scale(1.2, 0.7);

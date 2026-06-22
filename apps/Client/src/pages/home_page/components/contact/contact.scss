@@ -1,0 +1,17 @@
+.root {
+  @apply flex flex-col gap-[20px];
+
+  > span {
+    @apply text-2xl font-bold;
+  }
+
+  .root__content {
+    a {
+      @apply border-2 border-neutral-300 py-2 px-6 rounded-lg transition-all duration-300 text-xl font-bold;
+
+      &:hover {
+        @apply bg-neutral-300 text-neutral-950;
+      }
+    }
+  }
+}
