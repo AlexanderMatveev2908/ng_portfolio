@@ -3,6 +3,10 @@
 .root {
   @apply flex flex-col gap-[20px];
 
+  > span {
+    @apply text-2xl font-bold;
+  }
+
   .root__slider {
     @apply border-[3px] border-neutral-300 flex items-center gap-[25px] p-5 rounded-2xl overflow-hidden;
 

@@ -1,0 +1,13 @@
+.root {
+  @apply flex flex-col gap-[20px];
+
+  > span {
+    @apply text-2xl font-bold;
+  }
+
+  .root__content {
+    .content__filters {
+      @apply flex justify-between items-center;
+    }
+  }
+}

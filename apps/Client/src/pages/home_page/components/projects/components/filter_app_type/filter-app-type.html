@@ -1,0 +1,19 @@
+<div class="root">
+  <button (click)="toggleDrop()" #toggleRef>
+    <span>App Type</span>
+  </button>
+
+  @if (isDrop()) {
+    <div #dropRef class="root__drop">
+      @for (item of FilterAppUiFct.data; track item.id) {
+        <div class="drop__item">
+          <button (click)="handleClickType(item.val)" class="item__svg">
+            <ng-container *ngComponentOutlet="getSvg(item.val)" />
+          </button>
+
+          <span>{{ item.val }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>

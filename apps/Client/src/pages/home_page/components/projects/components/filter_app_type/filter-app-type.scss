@@ -1,0 +1,27 @@
+@use 'exports/mix.scss' as mix;
+
+.root {
+  @apply relative;
+
+  > button {
+    @apply text-neutral-950 bg-neutral-300 py-2 px-5 rounded-lg;
+    @include mix.app__scale(1.2, 0.8);
+  }
+
+  .root__drop {
+    @apply absolute w-[200%] border-[3px] border-neutral-300 p-5 rounded-2xl top-[150%] flex flex-col gap-[15px];
+
+    .drop__item {
+      @apply flex justify-start items-center gap-[15px];
+
+      .item__svg {
+        @include mix.of_size(30px);
+        @include mix.app__scale(1.2, 0.7);
+      }
+
+      span {
+        @apply text-lg;
+      }
+    }
+  }
+}
