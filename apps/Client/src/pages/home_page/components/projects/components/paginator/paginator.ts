@@ -79,7 +79,7 @@ export class Paginator extends UseInjCtxHk implements OnInit {
     this.useEffect(() => {
       const totalBlocks = this.totalBlocks();
 
-      if (this.currBlockPages() > totalBlocks - 1) {
+      if (this.currBlockPages() >= totalBlocks) {
         this.currBlockPages.set(0);
       }
     });
