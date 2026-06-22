@@ -48,6 +48,7 @@ export class FilterAppType {
 
   public handleClickType(appType: AppTypeT) {
     this.projectsSlice.setAppType(appType);
+    this.projectsSlice.setPage(0);
   }
 
   @HostListener('document:click', ['$event'])

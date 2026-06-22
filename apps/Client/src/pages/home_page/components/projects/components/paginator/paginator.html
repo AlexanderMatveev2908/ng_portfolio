@@ -1,0 +1,23 @@
+<div class="root">
+  <button (click)="handlePrevBlock()" [disabled]="!currBlockPages()" class="btn__block">
+    <ng-container *ngComponentOutlet="SvggLeft" />
+  </button>
+  <div class="root__content">
+    @for (item of pagesToShow(); track item.id) {
+      <button
+        (click)="handleClickPage(item.val)"
+        class="content__item"
+        [ngClass]="projectsSlice.page() === +item.val - 1 ? 'bg-neutral-300 text-neutral-950' : ''"
+      >
+        {{ item.val }}
+      </button>
+    }
+  </div>
+  <button
+    (click)="handleNextBlock()"
+    [disabled]="currBlockPages() >= totalBlocks() - 1"
+    class="btn__block"
+  >
+    <ng-container *ngComponentOutlet="SvgRight" />
+  </button>
+</div>

@@ -14,10 +14,11 @@ import { ProjectsUiFct } from '@/features/projects/ui_fct';
 import { ImgLoading } from '@/common/components/general/img_loading/img-loading';
 import { UsePlatformSvc } from '@/core/services/use_platform';
 import { Breakpoints } from '@/core/constants/breakpoints';
+import { Paginator } from './components/paginator/paginator';
 
 @Component({
   selector: 'app-projects',
-  imports: [FilterAppType, ImgLoading],
+  imports: [FilterAppType, ImgLoading, Paginator],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -48,9 +49,9 @@ export class Projects implements OnInit {
     if (this.usePlatform.isServer) {
       this.limit.set(1);
     } else {
-      if (width > Breakpoints.XXL) this.limit.set(4);
-      else if (width > Breakpoints.XL) this.limit.set(3);
-      else if (width > Breakpoints.MD) this.limit.set(2);
+      if (width >= Breakpoints.XXL) this.limit.set(4);
+      else if (width >= Breakpoints.XL) this.limit.set(3);
+      else if (width >= Breakpoints.MD) this.limit.set(2);
       else this.limit.set(1);
     }
   }

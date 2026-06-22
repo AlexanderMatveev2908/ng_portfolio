@@ -13,7 +13,6 @@ export class ProjectsSlice extends UseKitSliceSvc {
     return this.store.selectSignal(getProjectsState);
   }
 
-  public filtered: Signal<ProjectT[]> = computed(() => this.getProjectsState().filtered);
   public page: Signal<number> = computed(() => this.getProjectsState().page);
   public appType: Signal<AppTypeT[]> = computed(() => this.getProjectsState().appType);
 
@@ -30,9 +29,5 @@ export class ProjectsSlice extends UseKitSliceSvc {
 
   public setPage(page: number): void {
     this.store.dispatch(ProjectsActT.SET_PAGE({ page }));
-  }
-
-  public setFiltered(filtered: ProjectT[]): void {
-    this.store.dispatch(ProjectsActT.SET_FILTERED({ filtered }));
   }
 }
