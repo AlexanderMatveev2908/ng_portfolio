@@ -15,7 +15,7 @@ export class ProjectsUiFct {
       title: 'Recipes App',
       repo: 'https://github.com/AlexanderMatveev2908/RecipesApp',
       live: 'https://recipes-app-client.fly.dev/',
-      appType: 'full-stack',
+      appType: 'frontend',
       defName: 'recipes',
       down: false,
     },
