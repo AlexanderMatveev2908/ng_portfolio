@@ -4,11 +4,11 @@ import { v4 } from 'uuid';
 export class ProjectsUiFct {
   public static readonly data: ProjectT[] = [
     {
-      title: 'Invoices App',
-      repo: 'https://github.com/AlexanderMatveev2908/InvoicesApp',
-      live: 'https://invoices-app-client.fly.dev/',
-      appType: 'full-stack',
-      defName: 'invoices',
+      title: 'Blog App',
+      repo: 'https://github.com/AlexanderMatveev2908/ng_blog',
+      live: 'https://ng-blog.fly.dev/',
+      appType: 'frontend',
+      defName: 'blog',
       down: true,
     },
     {
@@ -18,6 +18,14 @@ export class ProjectsUiFct {
       appType: 'frontend',
       defName: 'recipes',
       down: false,
+    },
+    {
+      title: 'Invoices App',
+      repo: 'https://github.com/AlexanderMatveev2908/InvoicesApp',
+      live: 'https://invoices-app-client.fly.dev/',
+      appType: 'full-stack',
+      defName: 'invoices',
+      down: true,
     },
     {
       title: 'Product Feedbacks',
