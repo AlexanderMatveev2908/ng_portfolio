@@ -9,7 +9,7 @@ export class ProjectsUiFct {
       live: 'https://ng-blog.fly.dev/',
       appType: 'frontend',
       defName: 'blog',
-      down: true,
+      down: false,
     },
     {
       title: 'Recipes App',
